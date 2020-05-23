@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid__square'))
     const ScoreDisplay = document.querySelector('#score')
-    const StartBtn = document.querySellector('#start-button')
-    const width = 10;
+    const StartBtn = document.querySelector('#start-button')
+    const width = 10
 
   // The Tetrominoes
   const lTetromino = [
@@ -38,5 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   const theTetraminoes = [lTetromino, zTetramino, tTetramino, oTetramino, iTetramino]
+
+  let currentPosition = 4
+  let current = theTetraminoes[0][0]
+
+  //draw the first rotation in the first tetramino
+  function draw() {
+      current.forEach(index => {
+          squares[currentPosition + index].classList.add('tetramino')
+      })
+  }
+
+  draw()
 
 })

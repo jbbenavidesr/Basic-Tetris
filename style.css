@@ -27,7 +27,7 @@ html {
 .grid__square {
     height: 20px;
     width: 20px;
-    border: salmon 1px dashed;
+    border: salmon .5px dotted;
 }
 
 .tetramino {

@@ -7,15 +7,11 @@ html {
 }
 
 .container {
-    width: 50%;
-    min-width: 200px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
 }
 
 .grid {
     width: 200px;
-    margin: 1em auto;
     height: 400px;
     background-color: yellow;
     /* display: grid;
@@ -30,6 +26,21 @@ html {
     border: salmon .5px dotted;
 }
 
-.tetramino {
+.tetromino {
     background-color: blue;
+}
+
+.mini-grid {
+    margin-left: 3em;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+
+.mini-grid__square {
+    height: 20px;
+    width: 20px;
+    border: burlywood .5px dotted;
 }

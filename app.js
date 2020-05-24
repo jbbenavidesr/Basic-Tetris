@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'blue'
     ]
 
-    
     // The Tetrominoes
     const lTetromino = [
         [1, width+1, width*2+1, 2],
@@ -73,9 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    // make the tetromino move down every second
-    //timerId = setInterval(moveDown, 750)
-
     // assign functions to keyCodes
     function control(e) {
         if(e.keyCode ===37) {
@@ -119,13 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveLeft() {
         undraw()
         const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
-
         if(!isAtLeftEdge) currentPosition -= 1
-
         if(current.some(index => squares[currentPosition + index].classList.contains('grid__taken'))){
             currentPosition += 1
         }
-
         draw()
     }
 
@@ -133,13 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveRight() {
         undraw()
         const isAtRightEdge = current.some(index => (currentPosition + index ) % width === width - 1)
-
         if(!isAtRightEdge) currentPosition += 1
-
         if(current.some(index => squares[currentPosition + index].classList.contains('grid__taken'))){
             currentPosition -= 1
         }
-
         draw()
     }
 
@@ -156,10 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //show up-next tetromino in minigrid
-    let displaySquares = document.querySelectorAll('.mini-grid__square')
+    const displaySquares = document.querySelectorAll('.mini-grid__square')
     const displayWidth = 4
-    let displayIndex = 0
-    
+    const displayIndex = 0
 
     //the teTrominoes without rotations
     const upNextTetrominoes = [
@@ -199,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function addScore() {
         for(let i = 0; i < 199; i += width) {
             const row = [i, i+1, i+2, i+3, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
-
             if(row.every(index => squares[index].classList.contains('grid__taken'))) {
                 score += 10
                 scoreDisplay.innerHTML = score
@@ -222,8 +210,4 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId)
         }
     }
-
-
-
-
 })

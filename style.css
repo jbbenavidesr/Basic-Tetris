@@ -24,10 +24,6 @@ html {
     width: 20px;
 }
 
-.tetromino {
-    background-color: blue;
-}
-
 .mini-grid {
     margin-left: 3em;
     width: 80px;

@@ -8,14 +8,13 @@ html {
 
 .container {
     display: flex;
+    margin-top: 1em;
 }
 
 .grid {
     width: 200px;
     height: 400px;
     background-color: yellow;
-    /* display: grid;
-    grid-template: repeat(20, 1fr) / repeat(10, 1fr); */
     display: flex;
     flex-wrap: wrap;        
 }
@@ -23,7 +22,6 @@ html {
 .grid__square {
     height: 20px;
     width: 20px;
-    border: salmon .5px dotted;
 }
 
 .tetromino {
@@ -42,5 +40,4 @@ html {
 .mini-grid__square {
     height: 20px;
     width: 20px;
-    border: burlywood .5px dotted;
 }
